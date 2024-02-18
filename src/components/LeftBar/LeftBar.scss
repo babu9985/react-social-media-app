@@ -1,56 +1,65 @@
+@import '../../styles.scss';
+
 .leftbar {
-    flex: 1.5;
-    position: sticky;
-    top: 50px;
-    height: calc(100vh - 50px);
-    overflow: scroll;
+    @include themify($themes) {
+        flex: 1.5;
+        position: sticky;
+        top: 50px;
+        height: calc(100vh - 50px);
+        overflow: scroll;
+        background: themed('bgSoft');
+        color: themed('textColor');
 
-    &::-webkit-scrollbar{
-        display: none;
-    }
-    .container {
-        padding: 20px;
-
-        hr {
-            margin: 20px 0px;
-            border: none;
-            background: lightgray;
-            height: 0.5px;
+        &::-webkit-scrollbar {
+            display: none;
         }
 
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .container {
+            padding: 20px;
 
-            span {
-                font-size: 12px;
+
+            hr {
+                margin: 20px 0px;
+                border: none;
+                background: themed('border');
+                height: 0.5px;
             }
 
-            .user {
+            .menu {
                 display: flex;
-                align-items: center;
-                gap: 10px;
-
-                img {
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
-            }
-
-            .item {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-
-                img {
-                    width: 20px;
-                }
+                flex-direction: column;
+                gap: 15px;
 
                 span {
                     font-size: 14px;
+                    text-transform: capitalize;
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        width: 20px;
+                    }
+
+                    span {
+                        font-size: 14px;
+                    }
                 }
             }
         }

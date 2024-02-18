@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { DarkModeContextProvider } from './components/context/DarkModeContext';
+import { Authcontextprovider } from './components/context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <DarkModeContextProvider>
+      <Authcontextprovider>
+        <App />
+      </Authcontextprovider>
+    </DarkModeContextProvider>
   </React.StrictMode>
 );
 
